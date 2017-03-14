@@ -1,3 +1,4 @@
+<div class="">
 <div class='panel panel-primary'>
     <div class='panel-heading'>
     {{pageTitle}}
@@ -11,12 +12,12 @@
                  Filter by:
             </div>
             <div class='col-md-4'>
-                <input type='text'/>
+                <input type='text'  [(ngModel)] = 'filterBy' />
             </div>
         </div>
         <div class='row' >
             <div class='col-md-6'>
-                <h3>Filtered by: </h3>
+                <h3>Filtered by: {{filterBy}}</h3>
             </div>
         </div>
 
@@ -27,8 +28,8 @@
                 <thead>
                     <tr>
                         <th>
-                            <button class='btn btn-primary'>
-                              Show Image
+                            <button class='btn btn-primary' (click) = 'toggleImagestatus()'>
+                             {{ imageStatus ? 'Hide':'Show'}} Image
                             </button>
                         </th>
                         <th>Product</th>
@@ -40,15 +41,18 @@
                 </thead>
                 <tbody>
                     <tr *ngFor = 'let product of products'>
-                        <td><img src = "{{product.imageUrl}}" width = "50" ></td>
+                        <td >
+                            <img src = "{{product.imageUrl}}" [style.width.px] = 'imageWidth' [style.margin.px] = 'imageMargin' title="{{product.productName}}" *ngIf = 'imageStatus'>
+                        </td>
                         <td>{{product.productName}}</td>
-                        <td>{{product.productCode}}</td>
+                        <td>{{product.productCode | lowercase}}</td>
                         <td>{{product.releaseDate}}</td>
-                        <td>{{product.price}}</td>
+                        <td>{{product.price | currency:'USD':true:'1.2-2'}}</td>
                         <td>{{product.starRating}}</td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
+</div>
 </div>

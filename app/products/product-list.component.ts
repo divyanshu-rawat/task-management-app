@@ -9,7 +9,11 @@ import {Component} from '@angular/core';
 
 export class ProductListComponent{
 
-	pageTitle:string = "Product List"
+	pageTitle:string = "Product List";
+	imageWidth:number = 50;
+	imageMargin:number = 2;
+	imageStatus:boolean = false;
+	filterBy:string = 'Cart';
 	products:any[] = [
 
     {
@@ -34,5 +38,11 @@ export class ProductListComponent{
     }
 
 	];
+
+	toggleImagestatus():void{
+
+		this.imageStatus = !this.imageStatus;
+
+	}
 }
 
