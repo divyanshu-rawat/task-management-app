@@ -24,8 +24,9 @@ var ProductListComponent = (function () {
         this.imageStatus = !this.imageStatus;
     };
     ProductListComponent.prototype.ngOnInit = function () {
+        var _this = this;
         console.log(product_service_1.ProductService);
-        this.products = this._productService.getProducts();
+        this._productService.getProducts().subscribe(function (products) { return _this.products = products; }, function (err) { return _this.errorMessage = err; });
     };
     return ProductListComponent;
 }());
