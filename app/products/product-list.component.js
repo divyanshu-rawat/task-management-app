@@ -13,7 +13,7 @@ var ProductListComponent = (function () {
         this.imageWidth = 50;
         this.imageMargin = 2;
         this.imageStatus = false;
-        this.filterBy = 'Cart';
+        this.filterBy = '';
         this.products = [
             {
                 "productId": 1,
@@ -40,12 +40,17 @@ var ProductListComponent = (function () {
     ProductListComponent.prototype.toggleImagestatus = function () {
         this.imageStatus = !this.imageStatus;
     };
+    ProductListComponent.prototype.ngOnInit = function () {
+        console.log('In OnInit');
+    };
     return ProductListComponent;
 }());
 ProductListComponent = __decorate([
     core_1.Component({
         selector: 'pm-products',
-        templateUrl: 'app/products/product-list.component.html'
+        moduleId: module.id,
+        templateUrl: 'product-list.component.html',
+        styleUrls: ['product-list.component.css']
     })
 ], ProductListComponent);
 exports.ProductListComponent = ProductListComponent;
