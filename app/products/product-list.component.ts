@@ -16,7 +16,7 @@ export class ProductListComponent implements OnInit{
 	pageTitle:string = "Product List";
 	imageWidth:number = 50;
 	imageMargin:number = 2;
-	imageStatus:boolean = false;
+	imageStatus:boolean = true;
 	filterBy:string = '';
     errorMessage:string;
 	products:IProduct[];
