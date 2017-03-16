@@ -33,7 +33,6 @@ export class ProductListComponent implements OnInit{
 	}
 
 	ngOnInit():void{
-        console.log(ProductService);
 		
         this._productService.getProducts().subscribe(products => this.products = products,
             err => this.errorMessage = <any>err);

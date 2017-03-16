@@ -18,7 +18,7 @@ export class ProductService{
 
 		return this._http.get(this._productUrl)
 		.map((response:Response) => <IProduct[]> response.json())
-		.do( data  => console.log('All: ' + JSON.stringify(data)))
+		// .do( data  => console.log('All: ' + JSON.stringify(data,null,4)))
 		.catch(this.handleError);
 	}
 
