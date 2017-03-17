@@ -15,6 +15,7 @@ var Observable_1 = require("rxjs/Observable");
 require("rxjs/add/operator/map");
 require("rxjs/add/operator/do");
 require("rxjs/add/operator/catch");
+require("rxjs/add/observable/throw");
 var ProductService = (function () {
     function ProductService(_http) {
         this._http = _http;
@@ -24,6 +25,10 @@ var ProductService = (function () {
         return this._http.get(this._productUrl)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
+    };
+    ProductService.prototype.getProduct = function (id) {
+        return this.getProducts()
+            .map(function (products) { return products.find(function (p) { return p.productId === id; }); });
     };
     ProductService.prototype.handleError = function (error) {
         console.log(error);
