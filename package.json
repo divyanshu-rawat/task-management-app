@@ -12,6 +12,9 @@
     "typings": "typings",
     "postinstall": "typings install"
   },
+  "engines": {
+    "node": "v7.3.0"
+  },
   "license": "ISC",
   "dependencies": {
     "@angular/common": "2.0.0",
