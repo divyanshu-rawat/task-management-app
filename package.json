@@ -13,7 +13,8 @@
     "postinstall": "typings install"
   },
   "engines": {
-    "node": "v7.3.0"
+    "node": "node v6.5.0",
+    "npm" : "3.10.6" 
   },
   "license": "ISC",
   "dependencies": {
