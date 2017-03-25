@@ -70,7 +70,15 @@
 
 ![alt tag](https://github.com/divyanshu-rawat/A-Product-Management-App/blob/master/app/home/images/abc.png)
 
-##
+### Application Architecture
+
+![alt tag](https://github.com/divyanshu-rawat/A-Product-Management-App/blob/master/app/home/images/architecture.png)
+
+### Anatomy of Angular JS Application
+
+![alt tag](https://github.com/divyanshu-rawat/A-Product-Management-App/blob/master/app/home/images/anatomy.png)
+
+
 
 
 
